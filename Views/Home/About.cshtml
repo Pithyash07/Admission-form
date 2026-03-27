@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+    body {
+        background: #f4f7fb;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container-box {
+        max-width: 900px;
+        margin: 50px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .nav-tabs .nav-link {
+        border: none;
+        color: #555;
+        font-weight: 500;
+    }
+
+        .nav-tabs .nav-link.active {
+            background: #0d6efd;
+            color: white;
+            border-radius: 10px;
+        }
+
+    .member-card {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 20px;
+        transition: 0.3s;
+    }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+    .title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+</style>
+
+<div class="container-box">
+    <h2 class="title">About Our Team</h2>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs justify-content-center" id="teamTabs" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1">Member 1</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">Member 2</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab3">Member 3</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab4">Member 4</button>
+        </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+
+        <!-- Member 1 -->
+        <div class="tab-pane fade show active" id="tab1">
+            <div class="member-card text-center">
+                <h4>Temjennuchet</h4>
+                <p><strong>Roll No:</strong> 76 </p>
+                <p>Role: Frontend Developer</p>
+            </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="tab-pane fade" id="tab2">
+            <div class="member-card text-center">
+                <h4>Nzanti M jami</h4>
+                <p><strong>Roll No:</strong> 55</p>
+                <p>Role: Backend Developer</p>
+            </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="tab-pane fade" id="tab3">
+            <div class="member-card text-center">
+                <h4>Sayangshir T Longkumer</h4>
+                <p><strong>Roll No:</strong> 69 </p>
+                <p>Role: Database Manager</p>
+            </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="tab-pane fade" id="tab4">
+            <div class="member-card text-center">
+                <h4>Tiaakum Jamir</h4>
+                <p><strong>Roll No:</strong> 79 </p>
+                <p>Role: UI/UX Designer</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

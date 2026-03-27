@@ -1,0 +1,226 @@
+﻿@{
+    ViewBag.Title = "Admission Form";
+}
+@model StudentDetails
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #eef2f7;
+        margin: 0;
+    }
+
+    .header {
+        position: sticky;
+        top: 0;
+        background: #2c3e50;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .form-container {
+        width: 70%;
+        margin: 30px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h3 {
+        border-left: 5px solid #3498db;
+        padding-left: 10px;
+        color: #333;
+        margin-top: 20px;
+    }
+
+    .row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .form-group {
+        flex: 1;
+        min-width: 200px;
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+
+    textarea {
+        resize: none;
+        height: 80px;
+    }
+
+    .btn-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 5px;
+    }
+
+    .btn-submit {
+        background-color: #27ae60;
+    }
+
+    .btn-reset {
+        background-color: #e74c3c;
+    }
+</style>
+
+<div class="header">
+    NIELIT Admission Form
+</div>
+
+<div class="form-container">
+
+    <form asp-action="Submit" method="post">
+
+        <!-- Student Details -->
+        <h3>Student Details</h3>
+
+        <div class="row">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input asp-for="FullName" type="text" name="FullName"  />
+            </div>
+
+            <div class="form-group">
+                <label>Date of Birth</label>
+                <input asp-for="DateOfBirth" type="date"  />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label>Gender</label>
+                <select asp-for="Gender" ">
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Category</label>
+                <select asp-for="Category" typeof="text" >
+                    <option>General</option>
+                    <option>OBC</option>
+                    <option>ST</option>
+                    <option>SC</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label>Phone</label>
+                <input asp-for="Phone" type="number"  />
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input asp-for="Email" type="email" />
+            </div>
+        </div>
+
+        <!-- Parent Details -->
+        <h3>Parent / Guardian Details</h3>
+
+        <div class="row">
+            <div class="form-group">
+                <label>Parent/Guardian Name</label>
+                <input asp-for="ParentGuardianName" type="text"/>
+            </div>
+
+            <div class="form-group">
+                <label>Parent/Guardian Phone</label>
+                <input asp-for="ParentGuardianPhone" type="number"/>
+            </div>
+        </div>
+
+        <!-- Address Section -->
+        <h3>Address Details</h3>
+
+        <div class="row">
+            <div class="form-group">
+                <label>Permanent Address</label>
+                <input asp-for="PermanentAddress" />
+            </div>
+
+            <div class="form-group">
+                <label>Current Address</label>
+                <input asp-for="CurrentAddress"/>
+            </div>
+        </div>
+
+        <!-- Academic Details -->
+        <h3>Academic Details</h3>
+
+        <div class="row">
+            <div class="form-group">
+                <label>Class 10 Roll No.</label>
+                <input asp-for="Class10RollNo" type="number" />
+            </div>
+
+            <div class="form-group">
+                <label>Class 10 Percentage (%)</label>
+                <input asp-for="Class10Percentage" type="number"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label>Class 12 Roll No.</label>
+                <input asp-for="Class12RollNo" type="number"/>
+            </div>
+
+            <div class="form-group">
+                <label>Class 12 Percentage (%)</label>
+                <input asp-for="Class12Percentage" type="number"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Course</label>
+            <select asp-for="Course">
+                <option>BCA</option>
+                <option>MCA</option>
+                <option>MTech</option>
+                <option>BSc</option>
+                <option>O level</option>
+            </select>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-container">
+            <button type="submit" class="btn btn-submit">Submit</button>
+            <button type="reset" class="btn btn-reset">Reset</button>
+        </div>
+
+    </form>
+</div>
